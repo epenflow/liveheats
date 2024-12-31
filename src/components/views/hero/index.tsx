@@ -6,8 +6,8 @@ import './base.css';
 const Hero: React.FC = () => {
 	const { content, Gradient, Heat } = resources;
 	return (
-		<section className="hero-container">
-			<div className="hero-content">
+		<section className="hero-container border border-white">
+			<div className="hero-content translate-y-full">
 				<h1 className="content-heading">
 					{Object.entries(content.heading).map(([id, Element]) => (
 						<Element key={id} />

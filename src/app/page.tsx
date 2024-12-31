@@ -8,6 +8,7 @@ export default function Home() {
 				{Object.entries(Views).map(([key, Component]) => (
 					<Component key={key} />
 				))}
+				<section className="h-svh w-full" />
 			</main>
 		</Layout>
 	);

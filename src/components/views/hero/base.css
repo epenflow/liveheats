@@ -9,7 +9,7 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		margin-top: 14rem;
+		/* margin-top: 14rem; */
 	}
 	.hero-content {
 		@apply space-y-6;
