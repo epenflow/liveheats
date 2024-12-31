@@ -1,0 +1,43 @@
+@tailwind components;
+
+@layer components {
+	.hero-container {
+		min-height: 100vh;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin-top: 14rem;
+	}
+	.hero-content {
+		@apply space-y-6;
+		position: relative;
+		z-index: 10;
+	}
+	.content-heading {
+		@apply text-center font-lora font-bold text-5xl leading-[4rem];
+	}
+	.content-text {
+		@apply font-inter text-center;
+	}
+	.gradient-circle {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.gradient-circle img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.gradient-box {
+		@apply bg-gradient-to-t from-black to-transparent;
+		width: 100%;
+		height: 15rem;
+		bottom: 0;
+	}
+}
