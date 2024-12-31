@@ -1,0 +1,38 @@
+@tailwind components;
+
+@layer components {
+	.header-container {
+		position: fixed;
+		top: 50px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 100%;
+		max-width: 40rem;
+		z-index: 9999;
+	}
+	.header-navigation {
+		padding: 10px 20px;
+		background-color: var(--grey-200);
+		width: 100%;
+		border-radius: 40px;
+		border: 1px solid rgb(255 255 255 / 0.1);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.liveheats {
+		fill: var(--red-primary);
+		height: 1.25rem;
+	}
+	.navigation{
+		@apply space-x-3;
+	}
+	.navigation-button {
+		@apply text-xs;
+		padding: 5px 10px;
+		background-color: var(--grey-100);
+		border: 1px solid rgb(255 255 255 / 0.1);
+		border-bottom: none;
+		border-radius: 1.5rem;
+	}
+}
