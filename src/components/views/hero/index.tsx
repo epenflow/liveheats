@@ -1,9 +1,10 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import React from 'react';
 import './base.css';
 
 const Hero: React.FC = () => {
-	const { content, Gradient } = resources;
+	const { content, Gradient, Heat } = resources;
 	return (
 		<section className="hero-container">
 			<div className="hero-content">
@@ -19,6 +20,7 @@ const Hero: React.FC = () => {
 				</p>
 			</div>
 			<Gradient />
+			<Heat />
 		</section>
 	);
 };
@@ -55,5 +57,6 @@ const resources = {
 			<div className="gradient-box" />
 		</React.Fragment>
 	),
+	Heat: dynamic(() => import('@/components/base/heat')),
 };
 export default Hero;
