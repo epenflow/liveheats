@@ -7,7 +7,14 @@ export default {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				inter: `var(--font-inter)`,
+				"vt-323": "var(--font-vt323)",
+				"mr-dafoe": "var(--font-mr-dafoe)",
+				lora: "var(--font-lora)",
+			},
+		},
 	},
 	plugins: [],
 } satisfies Config;
