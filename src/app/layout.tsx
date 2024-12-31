@@ -1,3 +1,4 @@
+import fonts from "./fonts";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`antialiased`}>{children}</body>
+			<body
+				className={`${fonts.inter} ${fonts.lora} ${fonts.mrDafoe} ${fonts.vt323} antialiased`}
+			>
+				{children}
+			</body>
 		</html>
 	);
 }
