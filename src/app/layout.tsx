@@ -9,7 +9,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${fonts.inter} ${fonts.lora} ${fonts.mrDafoe} ${fonts.vt323} antialiased`}
+				className={`${fonts.inter} ${fonts.lora} ${fonts.mrDafoe} ${fonts.vt323} antialiased bg-black text-white`}
 			>
 				{children}
 			</body>
