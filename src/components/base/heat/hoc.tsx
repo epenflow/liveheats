@@ -18,7 +18,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						start: 'clamp(top center)',
 						end: 'clamp(bottom center)',
 						scrub: true,
-						markers: true,
+						markers: process.env.NODE_ENV !== 'production' ? true : false,
 					},
 				});
 				timeline.to(step, {
