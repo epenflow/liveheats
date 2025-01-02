@@ -19,6 +19,17 @@
 	.content-heading {
 		@apply text-center font-lora font-bold text-5xl leading-[4rem];
 	}
+	.line {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		width: fit-content;
+		perspective: 100%;
+		/* border: 1px solid red; */
+	}
+	.line span {
+		display: block;
+	}
 	.content-text {
 		@apply font-inter text-center;
 	}

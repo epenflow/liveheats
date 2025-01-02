@@ -1,0 +1,51 @@
+'use client';
+import gsap, { useGSAP } from '@/config/gsap';
+import React from 'react';
+export interface Props {
+	scope: React.RefObject<HTMLElement | null>;
+}
+export default function <T extends object>(Component: React.ComponentType<T & Props>) {
+	return function HOC(props: T) {
+		const scope = React.useRef<HTMLElement | null>(null);
+
+		useGSAP(
+			() => {
+				const heading: HTMLSpanElement[] = gsap.utils.toArray('[data-heading]');
+				const text: HTMLSpanElement[] = gsap.utils.toArray('[data-text]');
+
+				gsap.to('.hero-content', {
+					yPercent: 250,
+					autoAlpha: 0.5,
+					scrollTrigger: {
+						trigger: scope.current,
+						start: 'top top',
+						end: 'bottom',
+						scrub: 1.5,
+						markers: true,
+					},
+				});
+
+				gsap.from(heading, 0.5, {
+					yPercent: 100,
+					skewX: 45,
+					rotateX: 10,
+					stagger: {
+						each: 0.5,
+						amount: 0.75,
+					},
+				});
+				gsap.from(text, {
+					text: '',
+					delay: 0.5,
+					stagger: {
+						each: 0.5,
+						amount: 0.75,
+						ease: 'sine.inOut',
+					},
+				});
+			},
+			{ scope },
+		);
+		return <Component {...{ ...props, scope }} />;
+	};
+}
