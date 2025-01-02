@@ -1,8 +1,10 @@
+/* eslint-disable import/no-anonymous-default-export */
 'use client';
 import gsap from '@/config/gsap';
 import { LenisRef, ReactLenis } from 'lenis/react';
 import React from 'react';
 
+/* eslint-disable react/display-name */
 export default function ({ children }: React.PropsWithChildren) {
 	const lenis = React.useRef<LenisRef | null>(null);
 
