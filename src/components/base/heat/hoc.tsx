@@ -17,7 +17,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						trigger: scope.current,
 						start: 'clamp(top center)',
 						end: 'clamp(bottom center)',
-						scrub: true,
+						scrub: 1.5,
 						markers: process.env.NODE_ENV !== 'production' ? true : false,
 					},
 				});
