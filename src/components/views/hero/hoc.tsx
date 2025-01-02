@@ -18,6 +18,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 					yPercent: 250,
 					autoAlpha: 0.5,
 					scale: 0.5,
+					ease: 'sine.inOut',
 					scrollTrigger: {
 						trigger: scope.current,
 						start: 'top top',
@@ -34,11 +35,11 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 					stagger: {
 						each: 0.5,
 						amount: 0.75,
+						ease: 'circ.inOut',
 					},
 				});
-				gsap.from(text, {
+				gsap.from(text, 0.5, {
 					text: '',
-					delay: 0.5,
 					stagger: {
 						each: 0.5,
 						amount: 0.75,
