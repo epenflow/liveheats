@@ -10,8 +10,8 @@ const Hero: React.FC<Props> = ({ scope }) => {
 	return (
 		<section
 			ref={scope}
-			className="hero-container border border-white">
-			<div className="hero-content translate-y-full">
+			className="hero-container">
+			<div className="hero-content">
 				<h1 className="content-heading">
 					{Object.entries(content.heading).map(([id, Element]) => (
 						<Element key={id} />
@@ -22,6 +22,18 @@ const Hero: React.FC<Props> = ({ scope }) => {
 						<Element key={id} />
 					))}
 				</p>
+				<div className="flex items-center justify-center gap-5">
+					<div className="font-inter rounded-[20px] p-px bg-gradient-to-b from-grey-200 to-[#666666] overflow-clip">
+						<button className="text-sm bg-grey-200 font-semibold m-[0.25px] rounded-full px-[10px] py-[5px]">
+							Get Started
+						</button>
+					</div>
+					<div className="font-inter rounded-[20px] p-px bg-gradient-to-b from-grey-200 to-[#666666] overflow-clip">
+						<button className="text-sm bg-grey-200 font-semibold m-[0.25px] rounded-full px-[10px] py-[5px]">
+							Watch Video
+						</button>
+					</div>
+				</div>
 			</div>
 			<Gradient />
 			<Heat />
@@ -95,7 +107,7 @@ const resources = {
 					height={0}
 				/>
 			</div>
-			<div className="gradient-box" />
+			{/* <div className="gradient-box" /> */}
 		</React.Fragment>
 	),
 	Heat: dynamic(() => import('@/components/base/heat')),
