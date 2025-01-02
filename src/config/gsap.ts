@@ -1,8 +1,7 @@
 'use client';
 import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { TextPlugin } from 'gsap/TextPlugin';
+import { gsap, ScrollTrigger, TextPlugin } from 'gsap/all';
+
 try {
 	gsap.registerPlugin(ScrollTrigger, useGSAP, TextPlugin);
 	if (process.env.NODE_ENV !== 'production') {
