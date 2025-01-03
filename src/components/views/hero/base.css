@@ -10,6 +10,7 @@
 		align-items: center;
 		flex-direction: column;
 		overflow: hidden;
+		perspective: 100svh;
 	}
 
 	.hero-content {
@@ -20,6 +21,7 @@
 		justify-content: center;
 		flex-direction: column;
 		gap: 0.5rem;
+		margin-bottom: 1.5rem;
 	}
 
 	.text-content {
@@ -28,6 +30,7 @@
 		align-items: center;
 		justify-content: center;
 		text-align: center;
+		opacity: 0;
 	}
 	.heading {
 		@apply font-inter font-semibold text-5xl;
@@ -39,6 +42,8 @@
 	.button-content {
 		display: flex;
 		gap: 20px;
+		opacity: 0;
+		/* overflow: hidden; */
 	}
 	.button {
 		@apply text-xs font-medium;
@@ -48,5 +53,16 @@
 		padding: 5px 10px;
 		overflow: hidden;
 		border-bottom: none;
+	}
+
+	.box-gradient {
+		@apply bg-gradient-to-t from-black via-transparent to-transparent;
+		/* background-color: whitesmoke; */
+		width: 100%;
+		height: 458px;
+		bottom: 0px;
+		left: 0px;
+		position: absolute;
+		z-index: 30;
 	}
 }
