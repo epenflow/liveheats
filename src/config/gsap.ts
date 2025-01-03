@@ -4,6 +4,9 @@ import { gsap, ScrollTrigger, TextPlugin } from 'gsap/all';
 
 try {
 	gsap.registerPlugin(ScrollTrigger, useGSAP, TextPlugin);
+	ScrollTrigger.defaults({
+		markers: process.env.NODE_ENV === 'development',
+	});
 	if (process.env.NODE_ENV !== 'production') {
 		console.log('gsap registered ScrollTrigger');
 	}
