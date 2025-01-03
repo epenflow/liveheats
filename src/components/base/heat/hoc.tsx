@@ -22,15 +22,13 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						markers: process.env.NODE_ENV !== 'production' ? true : false,
 					},
 				});
-				timeline
-					.to(step, {
-						ease: 'sine.inOut',
-						rotateX: 0,
-					})
-					.to(step, {
-						ease: 'sine.inOut',
-						yPercent: 50,
-					});
+				timeline.to(step, {
+					ease: 'sine.inOut',
+					rotateX: 0,
+					keyframes: {
+						yPercent: [0, -50, 50],
+					},
+				});
 			},
 			{ scope },
 		);
