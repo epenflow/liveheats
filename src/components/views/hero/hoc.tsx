@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 'use client';
 import gsap, { useGSAP } from '@/config/gsap';
 import React from 'react';
@@ -5,6 +6,7 @@ export interface Props {
 	scope: React.RefObject<HTMLElement | null>;
 }
 
+/* eslint-disable react/display-name */
 export default function <T extends object>(Component: React.ComponentType<T & Props>) {
 	return function (props: T) {
 		const scope = React.useRef<HTMLElement>(null);
