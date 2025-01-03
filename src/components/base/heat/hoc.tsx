@@ -9,6 +9,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 	return function HOC(props: T) {
 		const scope = React.useRef<HTMLDivElement | null>(null);
 
+		// Scroll
 		useGSAP(
 			() => {
 				const step = scope.current!.querySelector('[data-step]');
@@ -29,6 +30,23 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						yPercent: [0, -50, 50],
 					},
 				});
+			},
+
+			{ scope },
+		);
+		// Reveal
+		useGSAP(
+			() => {
+				gsap.timeline()
+					.to(scope.current, {
+						opacity: 1,
+					})
+					.from('img', {
+						yPercent: -100,
+						rotateX: 0,
+						autoAlpha: 0,
+						ease: 'sine.inOut',
+					});
 			},
 			{ scope },
 		);

@@ -11,7 +11,7 @@ const Heat: React.FC<Props> = ({ scope }) => {
 		<div
 			ref={scope}
 			className={cn(
-				'[perspective:100vh] bg-gradient-to-t from-black via-black to-transparent z-10 relative -translate-y-1/2',
+				'[perspective:100vh] opacity-0 bg-gradient-to-t from-black via-black to-transparent z-10 relative -translate-y-1/2',
 				flags['border'] && 'border border-white',
 			)}>
 			<Image
@@ -21,6 +21,7 @@ const Heat: React.FC<Props> = ({ scope }) => {
 				width={0}
 				height={0}
 				sizes="100vh"
+				style={{ willChange: 'transform, opacity' }}
 				className="w-auto [transform:rotateX(45deg)] h-[458px] object-contain"
 			/>
 		</div>
