@@ -27,6 +27,10 @@ const Hero: React.FC<Props> = ({ scope }) => {
 					</TextReveal>
 					<TextReveal>for action sports competitions.</TextReveal>
 				</div>
+				<div className={cn('button-content', flags['border'] && 'border border-red-500')}>
+					<button className="button">Get Started</button>
+					<button className="button">Watch Videos</button>
+				</div>
 			</div>
 			<Heat />
 		</section>

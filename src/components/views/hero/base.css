@@ -19,6 +19,7 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		gap: 0.5rem;
 	}
 
 	.text-content {
@@ -33,5 +34,19 @@
 	}
 	.paragraph {
 		@apply text-xl;
+	}
+
+	.button-content {
+		display: flex;
+		gap: 20px;
+	}
+	.button {
+		@apply text-xs font-medium;
+		background: var(--grey-200);
+		border-radius: 1.5rem;
+		border: 1px solid rgb(255 255 255 / 0.1);
+		padding: 5px 10px;
+		overflow: hidden;
+		border-bottom: none;
 	}
 }
