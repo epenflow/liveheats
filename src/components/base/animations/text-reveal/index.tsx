@@ -1,7 +1,7 @@
 'use client';
 import flags from '@/libs/flags';
 import cn from '@/libs/utils/cn';
-import { motion, type Variants } from 'motion/react';
+import { motion, useInView, type Variants } from 'motion/react';
 import React from 'react';
 type Direction = 'bottom' | 'top';
 interface Props {
@@ -16,8 +16,11 @@ const TextReveal: React.FC<Props> = ({
 	direction = 'bottom',
 	duration = 0.5,
 }) => {
+	const ref = React.useRef<HTMLDivElement>(null);
+	const inView = useInView(ref);
 	return (
-		<div
+		<motion.div
+			ref={ref}
 			className={cn(
 				'inline-block overflow-hidden',
 				flags['border'] && 'border border-yellow-500',
@@ -27,13 +30,13 @@ const TextReveal: React.FC<Props> = ({
 					variants={variants}
 					initial="initial"
 					animate="animate"
-					custom={{ direction, duration, key }}
+					custom={{ direction, duration, key, inView }}
 					className="whitespace-pre inline-block leading-normal"
 					key={key}>
 					{char}
 				</motion.span>
 			))}
-		</div>
+		</motion.div>
 	);
 };
 

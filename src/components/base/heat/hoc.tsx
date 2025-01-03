@@ -15,19 +15,22 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 				const timeline = gsap.timeline({
 					scrollTrigger: {
 						trigger: scope.current,
+						endTrigger: scope.current?.parentElement,
 						start: 'clamp(top center)',
 						end: 'clamp(bottom center)',
 						scrub: 1.5,
 						markers: process.env.NODE_ENV !== 'production' ? true : false,
 					},
 				});
-				timeline.to(step, {
-					ease: 'sine.inOut',
-					rotateX: 0,
-					keyframes: {
-						yPercent: [0, -25, 50],
-					},
-				});
+				timeline
+					.to(step, {
+						ease: 'sine.inOut',
+						rotateX: 0,
+					})
+					.to(step, {
+						ease: 'sine.inOut',
+						yPercent: 50,
+					});
 			},
 			{ scope },
 		);

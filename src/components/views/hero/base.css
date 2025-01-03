@@ -6,6 +6,10 @@
 		height: 100%;
 		overflow-x: hidden;
 		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		overflow: hidden;
 	}
 
 	.hero-content {

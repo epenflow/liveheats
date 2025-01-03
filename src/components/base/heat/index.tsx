@@ -1,5 +1,7 @@
 'use client';
 
+import flags from '@/libs/flags';
+import cn from '@/libs/utils/cn';
 import Image from 'next/image';
 import type React from 'react';
 import hoc, { type Props } from './hoc';
@@ -8,7 +10,10 @@ const Heat: React.FC<Props> = ({ scope }) => {
 	return (
 		<div
 			ref={scope}
-			className="[perspective:100vh] z-10 relative">
+			className={cn(
+				'[perspective:100vh] z-10 relative -translate-y-1/2',
+				flags['border'] && 'border border-white',
+			)}>
 			<Image
 				data-step
 				src={'/Heat.svg'}
