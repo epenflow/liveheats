@@ -17,6 +17,6 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
 const resources = {
 	Navbar: dynamic(() => import('@/components/base/navbar')),
-	Lenis: dynamic(() => import('@/context/lenis/index')),
+	Lenis: dynamic(() => import('@/components/lenis/index')),
 };
 export default Layout;

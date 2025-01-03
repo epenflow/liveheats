@@ -15,7 +15,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 				const text: HTMLSpanElement[] = gsap.utils.toArray('[data-text]');
 
 				gsap.to('.hero-content', {
-					yPercent: 250,
+					yPercent: 100,
 					autoAlpha: 0.5,
 					scale: 0.5,
 					ease: 'sine.inOut',
@@ -24,7 +24,6 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						start: 'top top',
 						end: 'bottom',
 						scrub: 1.5,
-						markers: process.env.NODE_ENV !== 'production' ? true : false,
 					},
 				});
 
