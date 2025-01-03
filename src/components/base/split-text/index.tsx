@@ -16,6 +16,7 @@ const SplitText: React.FC<Props> = ({ type = 'word', children }) => {
 			{children?.split(type === 'char' ? '' : /(?=\s)|(?<=\s)/).map((splitter, key) => (
 				<span
 					key={key}
+					data-splitter={splitter}
 					className="whitespace-pre inline-block leading-normal">
 					{splitter}
 				</span>

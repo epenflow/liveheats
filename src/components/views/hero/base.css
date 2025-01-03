@@ -22,6 +22,8 @@
 		flex-direction: column;
 		gap: 0.5rem;
 		margin-bottom: 1.5rem;
+		overflow: hidden;
+		will-change: width, scale, transform, opacity;
 	}
 
 	.text-content {
@@ -31,12 +33,17 @@
 		justify-content: center;
 		text-align: center;
 		opacity: 0;
+		will-change: transform, opacity;
 	}
 	.heading {
 		@apply font-inter font-semibold text-5xl;
 	}
 	.paragraph {
 		@apply text-xl;
+	}
+
+	.text-content > div > span {
+		will-change: transform;
 	}
 
 	.button-content {
@@ -53,6 +60,7 @@
 		padding: 5px 10px;
 		overflow: hidden;
 		border-bottom: none;
+		will-change: transform, opacity, scale;
 	}
 
 	.box-gradient {

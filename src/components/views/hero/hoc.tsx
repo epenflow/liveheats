@@ -14,20 +14,34 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 		// Scroll Animation
 		useGSAP(
 			() => {
-				const timeline = gsap.timeline({
-					scrollTrigger: {
-						trigger: scope.current,
-						start: 'top',
-						end: 'bottom',
-						scrub: 1.5,
-					},
-				});
-				timeline.to('.hero-content', {
+				const scrollTrigger = {
+					trigger: scope.current,
+					start: 'top',
+					end: 'bottom',
+					scrub: 1.5,
+				};
+
+				gsap.to('.hero-content', {
 					ease: 'sine.inOut',
 					scale: 0.5,
 					autoAlpha: 0,
 					rotateX: 45,
 					yPercent: 100,
+					width: 0,
+					scrollTrigger,
+				});
+
+				gsap.to('.button', {
+					xPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					yPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					scrollTrigger,
+				});
+
+				gsap.to('.text-content', {
+					yPercent: -200,
+					xPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					ease: 'sine.inOut',
+					scrollTrigger,
 				});
 			},
 			{ scope },
