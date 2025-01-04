@@ -50,8 +50,6 @@ const Hero: React.FC<Props> = ({ scope }) => {
 	);
 };
 
-const getRandomPosition = () => `${Math.floor(Math.random() * 101)}%`;
-
 const resources = {
 	Heat: dynamic(() => import('@/components/base/heat')),
 	SplitText: dynamic(() => import('@/components/base/split-text')),
