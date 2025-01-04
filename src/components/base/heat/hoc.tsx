@@ -37,11 +37,12 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 		// Reveal
 		useGSAP(
 			() => {
+				const step = scope.current!.querySelector('[data-step]');
 				gsap.timeline()
 					.to(scope.current, {
 						opacity: 1,
 					})
-					.from('img', {
+					.from(step, {
 						yPercent: -100,
 						rotateX: 0,
 						autoAlpha: 0,
@@ -50,6 +51,36 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 			},
 			{ scope },
 		);
+
+		useGSAP(
+			() => {
+				const heatButton = scope.current!.querySelector('.heat-button');
+				const buttonHover = scope.current!.querySelector('.button-hover');
+				const buttons = heatButton!.querySelectorAll('button');
+
+				gsap.set(buttonHover, {
+					left: buttons[1].offsetLeft,
+				});
+
+				buttons.forEach((button, index) => {
+					button.addEventListener('mouseenter', () => {
+						console.log(button.getBoundingClientRect().width);
+						gsap.to(buttonHover, {
+							left: button.offsetLeft,
+							ease: 'sine.inOut',
+						});
+					});
+					button.addEventListener('mouseleave', () => {
+						gsap.to(buttonHover, {
+							left: buttons[1].offsetLeft,
+							ease: 'sine.inOut',
+						});
+					});
+				});
+			},
+			{ scope },
+		);
+
 		return <Component {...{ ...props, scope }} />;
 	};
 }
