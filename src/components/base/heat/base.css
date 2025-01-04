@@ -118,6 +118,9 @@
 		width: 27px;
 		border-radius: 99999;
 		background-color: var(--grey-100);
+		background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
 	}
 	.ranking-points {
 		display: flex;
@@ -127,5 +130,10 @@
 	.ranking-difference {
 		@apply text-white/70;
 		font-size: 11px;
+	}
+	.heat-back-button {
+		display: flex;
+		align-items: center;
+		gap: 5;
 	}
 }

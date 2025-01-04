@@ -1,76 +1,90 @@
 @tailwind components;
 
 @layer components {
-	.hero-container {
-		min-height: 100svh;
-		height: 100%;
-		overflow-x: hidden;
-		position: relative;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		overflow: hidden;
-		perspective: 100svh;
-	}
+  .hero-container {
+    min-height: 100svh;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    perspective: 100svh;
+  }
+  .hero-container::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(
+        rgb(255 255 255 / 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to right, rgb(255 255 255 / 0.1) 1px, transparent 1px);
+    background-size: 100px 100px;
+  }
 
-	.hero-content {
-		height: 100svh;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 0.5rem;
-		margin-bottom: 1.5rem;
-		overflow: hidden;
-		will-change: width, scale, transform, opacity;
-	}
+  .hero-content {
+    height: 100svh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    will-change: width, scale, transform, opacity;
+  }
 
-	.text-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		opacity: 0;
-		will-change: transform, opacity;
-	}
-	.heading {
-		@apply font-inter font-semibold text-5xl;
-	}
-	.paragraph {
-		@apply text-xl;
-	}
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+  .heading {
+    @apply font-inter font-semibold text-5xl;
+  }
+  .paragraph {
+    @apply text-xl;
+  }
 
-	.text-content > div > span {
-		will-change: transform;
-	}
+  .text-content > div > span {
+    will-change: transform;
+  }
 
-	.button-content {
-		display: flex;
-		gap: 20px;
-		opacity: 0;
-		/* overflow: hidden; */
-	}
-	.button {
-		@apply text-xs font-medium;
-		background: var(--grey-200);
-		border-radius: 1.5rem;
-		border: 1px solid rgb(255 255 255 / 0.1);
-		padding: 5px 10px;
-		overflow: hidden;
-		border-bottom: none;
-		will-change: transform, opacity, scale;
-	}
+  .button-content {
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    /* overflow: hidden; */
+  }
+  .button {
+    @apply text-xs font-medium;
+    background: var(--grey-200);
+    border-radius: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    padding: 5px 10px;
+    overflow: hidden;
+    border-bottom: none;
+    will-change: transform, opacity, scale;
+  }
 
-	.box-gradient {
-		@apply bg-gradient-to-t from-black via-transparent to-transparent;
-		/* background-color: whitesmoke; */
-		width: 100%;
-		height: calc(458px / 2);
-		bottom: 0px;
-		left: 0px;
-		position: absolute;
-		z-index: 30;
-	}
+  .box-gradient {
+    @apply bg-gradient-to-t from-black via-transparent to-transparent;
+    /* background-color: whitesmoke; */
+    width: 100%;
+    height: calc(458px / 2);
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 30;
+  }
 }

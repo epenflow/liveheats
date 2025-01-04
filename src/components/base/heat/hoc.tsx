@@ -20,14 +20,15 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						start: 'clamp(top center)',
 						end: 'clamp(bottom center)',
 						scrub: 1.5,
-						markers: process.env.NODE_ENV !== 'production' ? true : false,
+						pin: scope.current?.parentElement,
+						pinType: 'transform',
 					},
 				});
 				timeline.to(step, {
 					ease: 'sine.inOut',
 					rotateX: 0,
 					keyframes: {
-						yPercent: [0, -50, 50],
+						yPercent: [0, -50],
 					},
 				});
 			},
@@ -64,15 +65,22 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 
 				buttons.forEach((button, index) => {
 					button.addEventListener('mouseenter', () => {
-						console.log(button.getBoundingClientRect().width);
 						gsap.to(buttonHover, {
 							left: button.offsetLeft,
+							borderTopLeftRadius: index % 2 === 0 ? 10 : 0,
+							borderBottomLeftRadius: index % 2 === 0 ? 10 : 0,
+							borderTopRightRadius: index % 2 === 0 ? 0 : 10,
+							borderBottomRightRadius: index % 2 === 0 ? 0 : 10,
 							ease: 'sine.inOut',
 						});
 					});
 					button.addEventListener('mouseleave', () => {
 						gsap.to(buttonHover, {
 							left: buttons[1].offsetLeft,
+							borderTopLeftRadius: 0,
+							borderBottomLeftRadius: 0,
+							borderTopRightRadius: 10,
+							borderBottomRightRadius: 10,
 							ease: 'sine.inOut',
 						});
 					});

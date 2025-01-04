@@ -26,8 +26,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 					scale: 0.5,
 					autoAlpha: 0,
 					rotateX: 45,
-					yPercent: 100,
-					width: 0,
+					// yPercent: 100,
 					scrollTrigger,
 				});
 
