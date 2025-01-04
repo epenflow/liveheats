@@ -116,7 +116,7 @@
 	.ranking-avatar {
 		height: 27px;
 		width: 27px;
-		border-radius: 99999;
+		border-radius: 99999px;
 		background-color: var(--grey-100);
 		background-size: cover;
 		background-position: 50% 50%;
