@@ -42,6 +42,18 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 					ease: 'sine.inOut',
 					scrollTrigger,
 				});
+
+				gsap.to('[data-parallax]', {
+					top: '-100%',
+					left: () => `${Math.floor(Math.random() * 101)}%`,
+					ease: 'sine.inOut',
+					stagger: {
+						each: 0.01,
+						amount: 0.01,
+					},
+					// delay: (index: number) => (index % 2 === 0 ? 0.5 : 1),
+					scrollTrigger,
+				});
 			},
 			{ scope },
 		);
