@@ -19,7 +19,7 @@
 		border-radius: 20px;
 		display: flex;
 		flex-direction: column;
-		gap: 24;
+		gap: 24px;
 		border: 1px solid rgb(255 255 255 / 0.1);
 		transform: rotateX(45deg);
 		will-change: transform, opacity;
@@ -27,7 +27,7 @@
 
 	.heat-session {
 		display: flex;
-		gap: 10;
+		gap: 10px;
 		align-items: flex-start;
 	}
 	.heat-session p {
@@ -93,7 +93,7 @@
 	}
 	.heat-ranking div {
 		display: flex;
-		gap: 50;
+		gap: 50px;
 	}
 
 	.ranking-outer {
@@ -107,11 +107,11 @@
 	}
 	.ranking-details {
 		display: flex;
-		gap: 50;
+		gap: 50px;
 	}
 	.ranking-info {
 		display: flex;
-		gap: 10;
+		gap: 10px;
 	}
 	.ranking-avatar {
 		height: 27px;
@@ -134,6 +134,6 @@
 	.heat-back-button {
 		display: flex;
 		align-items: center;
-		gap: 5;
+		gap: 5px;
 	}
 }
