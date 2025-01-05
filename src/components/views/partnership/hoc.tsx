@@ -1,6 +1,5 @@
-/* eslint-disable import/no-anonymous-export-default */
+/* eslint-disable  import/no-anonymous-default-export */
 'use client';
-
 import gsap, { ScrollTrigger, useGSAP } from '@/config/gsap';
 import React from 'react';
 export interface Props {
