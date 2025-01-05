@@ -4,7 +4,7 @@ This project is a redesign of the official [Liveheats](https://organiser.livehea
 
 ## Live Demo
 
-Check out the live demo of the landing page [here](#).
+Check out the live demo of the landing page [here](https://liveheats-psi.vercel.app/).
 
 ## Design
 
