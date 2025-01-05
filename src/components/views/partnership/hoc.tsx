@@ -49,6 +49,10 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 					'.partnership-heading > div > span',
 					scope.current,
 				);
+				const paragraph: HTMLElement[] = gsap.utils.toArray(
+					'.partnership-paragraph > div > span',
+					scope.current,
+				);
 				gsap.from(headings, {
 					yPercent: 100,
 					stagger: {
@@ -63,7 +67,20 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						scrub: 1.5,
 					},
 				});
-				console.log({ headings });
+				gsap.from(paragraph, 0.5, {
+					color: 'rgb(255 255 255 / 0.1)',
+					stagger: {
+						each: 0.5,
+						amount: 0.5,
+					},
+					ease: 'sine.inOut',
+					scrollTrigger: {
+						trigger: paragraph,
+						start: 'top center',
+						end: 'bottom center',
+						scrub: 1.5,
+					},
+				});
 			},
 			{ scope: scope },
 		);

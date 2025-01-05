@@ -18,6 +18,7 @@ const Partnership: React.FC<Props> = ({ scope }) => {
 				<TextReveal type="char">Liveheats powers</TextReveal>
 				<TextReveal type="char">worldwide action sports</TextReveal>
 			</div>
+
 			<div className="marque">
 				<div className="partnership-inner">
 					{partnership.map(({ alt, src }, key) => (
@@ -32,6 +33,11 @@ const Partnership: React.FC<Props> = ({ scope }) => {
 						/>
 					))}
 				</div>
+			</div>
+			<div className="partnership-paragraph">
+				<TextReveal>1,200+ Action sports organisations using Liveheats</TextReveal>
+				<TextReveal>Over 500,000 delighted athletes</TextReveal>
+				<TextReveal>Over 15,000 events powered</TextReveal>
 			</div>
 		</section>
 	);
