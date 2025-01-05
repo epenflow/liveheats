@@ -18,5 +18,6 @@ const resources = {
 	Layout: dynamic(() => import('@/components/layouts/app')),
 	Views: {
 		Hero: dynamic(() => import('@/components/views/hero')),
+		Partnership: dynamic(() => import('@/components/views/partnership')),
 	},
 };
