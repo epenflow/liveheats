@@ -13,9 +13,7 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 
 		useGSAP(
 			() => {
-				const currentScroll = 50;
-				let isScrolling: boolean;
-				const marquee = scope.current!.querySelector('[data-marquee]');
+				const marquee = scope.current!.querySelector('.marque');
 				const firstChild = marquee!.firstChild;
 				const cloneNode = firstChild!.cloneNode(true);
 
@@ -36,19 +34,39 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 					end: 'clamp(bottom center)',
 					scrub: 1.5,
 					onUpdate: (self) => {
-						let direction = self.direction;
 						gsap.to(tween, {
 							timeScale: self.direction === -1 ? 1 : -1,
 							overwrite: true,
 						});
-						console.log(self.direction);
 					},
 				});
-
-				console.log({ marquee, firstChild, cloneNode });
 			},
-
 			{ scope },
+		);
+
+		useGSAP(
+			() => {
+				const headings: HTMLElement[] = gsap.utils.toArray(
+					'.partnership-heading > div > span',
+					scope.current,
+				);
+				gsap.from(headings, {
+					yPercent: 100,
+					stagger: {
+						each: 0.5,
+						amount: 0.5,
+					},
+					ease: 'sine',
+					scrollTrigger: {
+						trigger: headings,
+						start: 'top center',
+						end: 'bottom center',
+						scrub: 1.5,
+					},
+				});
+				console.log({ headings });
+			},
+			{ scope: scope },
 		);
 		return <Component {...{ ...props, scope }} />;
 	};

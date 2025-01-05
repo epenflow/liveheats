@@ -1,26 +1,46 @@
 @tailwind components;
 
 @layer components {
-  .partnership-container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-  }
+	.partnership-container {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		width: 100%;
+	}
 
-  .partnership-outer {
-    min-width: 100%;
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    background-color: white;
-    overflow: hidden;
-  }
-  .partnership-inner {
-    height: fit-content;
-    min-width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
+	.marque {
+		min-width: 100%;
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		background-color: white;
+		overflow: hidden;
+	}
+
+	.partnership-heading {
+		@apply font-inter font-bold text-5xl;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding: 20px;
+	}
+	.partnership-heading::before {
+		@apply bg-gradient-to-t from-black to-transparent;
+		content: "";
+		z-index: 10;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+
+	.partnership-inner {
+		height: fit-content;
+		min-width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+	}
 }

@@ -1,21 +1,24 @@
 'use client';
 import flags from '@/libs/flags';
 import cn from '@/libs/utils/cn';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import type React from 'react';
 import './base.css';
 import hoc, { type Props } from './hoc';
 
 const Partnership: React.FC<Props> = ({ scope }) => {
-	const { partnership } = resources;
+	const { partnership, TextReveal } = resources;
 
 	return (
 		<section
 			ref={scope}
 			className={cn('partnership-container', flags['border'] && 'border border-yellow-500')}>
-			<div
-				data-marquee
-				className="partnership-outer">
+			<div className="partnership-heading">
+				<TextReveal type="char">Liveheats powers</TextReveal>
+				<TextReveal type="char">worldwide action sports</TextReveal>
+			</div>
+			<div className="marque">
 				<div className="partnership-inner">
 					{partnership.map(({ alt, src }, key) => (
 						<Image
@@ -71,5 +74,6 @@ const resources = {
 		src: string;
 		alt: string;
 	}>,
+	TextReveal: dynamic(() => import('@/components/base/split-text')),
 };
 export default hoc(Partnership);
