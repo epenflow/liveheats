@@ -1,72 +1,73 @@
 @tailwind components;
 
 @layer components {
-	.heat-container {
-		perspective: 100vh;
-		opacity: 100;
-		width: fit-content;
-		height: fit-content;
-		transform: translate(0%, -50%);
-		position: relative;
-		opacity: 0;
-		will-change: opacity;
-	}
-	.heat {
-		padding: 15px 30px;
-		width: 620px;
-		/* height: 420px; */
-		background-color: var(--grey-200);
-		border-radius: 20px;
-		display: flex;
-		flex-direction: column;
-		gap: 24px;
-		border: 1px solid rgb(255 255 255 / 0.1);
-		transform: rotateX(45deg);
-		will-change: transform, opacity;
-	}
+  .heat-container {
+    perspective: 100vh;
+    opacity: 100;
+    width: fit-content;
+    height: fit-content;
+    transform: translate(0%, -50%);
+    position: relative;
+    opacity: 0;
+    will-change: opacity;
+    z-index: 10;
+  }
+  .heat {
+    padding: 15px 30px;
+    width: 620px;
+    /* height: 420px; */
+    background-color: var(--grey-200);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    transform: rotateX(45deg);
+    will-change: transform, opacity;
+  }
 
-	.heat-session {
-		display: flex;
-		gap: 10px;
-		align-items: flex-start;
-	}
-	.heat-session p {
-		@apply text-4xl font-semibold font-inter;
-	}
-	.heat-session button {
-		@apply text-[11px] font-inter font-semibold animate-pulse;
-		padding: 5px 10px;
-		background-color: var(--red-primary);
-		border-radius: 20px;
-		text-align: center;
-	}
-	.heat-button {
-		display: flex;
-		justify-content: center;
-		position: relative;
-		overflow: clip;
-		border-radius: 10px;
-		border: 1px solid rgb(255 255 255 / 0.1);
-		perspective: 100vh;
-	}
-	.heat-button button {
-		@apply basis-full font-semibold font-inter;
-		font-size: 16px;
-		padding: 10px 20px;
-		position: relative;
-		z-index: 10;
-	}
-	.button-hover {
-		position: absolute;
-		height: 100%;
-		background-color: var(--grey-100);
-		padding: 10px 20px;
-		max-width: 100%;
-		width: 50%;
-		will-change: left;
-	}
+  .heat-session {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .heat-session p {
+    @apply text-4xl font-semibold font-inter;
+  }
+  .heat-session button {
+    @apply text-[11px] font-inter font-semibold animate-pulse;
+    padding: 5px 10px;
+    background-color: var(--red-primary);
+    border-radius: 20px;
+    text-align: center;
+  }
+  .heat-button {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: clip;
+    border-radius: 10px;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    perspective: 100vh;
+  }
+  .heat-button button {
+    @apply basis-full font-semibold font-inter;
+    font-size: 16px;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+  }
+  .button-hover {
+    position: absolute;
+    height: 100%;
+    background-color: var(--grey-100);
+    padding: 10px 20px;
+    max-width: 100%;
+    width: 50%;
+    will-change: left;
+  }
 
-	/* .heat-button button:nth-child(1) {
+  /* .heat-button button:nth-child(1) {
 		background-color: var(--grey-100);
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
@@ -81,59 +82,59 @@
 		border-top-right-radius: 10px;
 		border-bottom-right-radius: 10px;
 	} */
-	.heat-ranking {
-		padding: 10px;
-		display: flex;
-		justify-content: space-between;
-		align-content: center;
-		background-color: var(--grey-100);
-		border-radius: 10px;
-		font-size: 11px;
-		border: 1px solid rgb(255 255 255 / 0.1);
-	}
-	.heat-ranking div {
-		display: flex;
-		gap: 50px;
-	}
+  .heat-ranking {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: var(--grey-100);
+    border-radius: 10px;
+    font-size: 11px;
+    border: 1px solid rgb(255 255 255 / 0.1);
+  }
+  .heat-ranking div {
+    display: flex;
+    gap: 50px;
+  }
 
-	.ranking-outer {
-		display: flex;
-		flex-direction: column;
-	}
-	.ranking-inner {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.ranking-details {
-		display: flex;
-		gap: 50px;
-	}
-	.ranking-info {
-		display: flex;
-		gap: 10px;
-	}
-	.ranking-avatar {
-		height: 27px;
-		width: 27px;
-		border-radius: 99999px;
-		background-color: var(--grey-100);
-		background-size: cover;
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-	}
-	.ranking-points {
-		display: flex;
-		flex-direction: column;
-		text-align: end;
-	}
-	.ranking-difference {
-		@apply text-white/70;
-		font-size: 11px;
-	}
-	.heat-back-button {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-	}
+  .ranking-outer {
+    display: flex;
+    flex-direction: column;
+  }
+  .ranking-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ranking-details {
+    display: flex;
+    gap: 50px;
+  }
+  .ranking-info {
+    display: flex;
+    gap: 10px;
+  }
+  .ranking-avatar {
+    height: 27px;
+    width: 27px;
+    border-radius: 99999px;
+    background-color: var(--grey-100);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .ranking-points {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+  .ranking-difference {
+    @apply text-white/70;
+    font-size: 11px;
+  }
+  .heat-back-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 }

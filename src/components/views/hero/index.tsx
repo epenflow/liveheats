@@ -40,7 +40,7 @@ const Hero: React.FC<Props> = ({ scope }) => {
 						left: status[key].left,
 						top: status[key].top,
 						position: 'absolute',
-						zIndex: '-10',
+						zIndex: '5',
 					}}
 				/>
 			))}

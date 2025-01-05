@@ -23,22 +23,23 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 
 				gsap.to('.hero-content', {
 					ease: 'sine.inOut',
-					scale: 0.5,
+					// scale: 0.5,
 					autoAlpha: 0,
-					rotateX: 45,
-					// yPercent: 100,
+					rotateX: -45,
+					yPercent: -100,
 					scrollTrigger,
 				});
 
 				gsap.to('.button', {
 					xPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
-					yPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					// yPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					yPercent: 200,
 					scrollTrigger,
 				});
 
 				gsap.to('.text-content', {
-					yPercent: -200,
-					xPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					yPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
+					// xPercent: (index: number) => (index % 2 === 0 ? -100 : 100),
 					ease: 'sine.inOut',
 					scrollTrigger,
 				});
