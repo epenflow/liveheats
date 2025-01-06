@@ -1,3 +1,4 @@
+import cn from '@/libs/utils/cn';
 import fonts from './fonts';
 import './globals.css';
 
@@ -10,7 +11,13 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				suppressHydrationWarning
-				className={`${fonts.inter} ${fonts.lora} ${fonts.mrDafoe} ${fonts.vt323} antialiased bg-black text-white`}>
+				className={cn(
+					'antialiased bg-black text-white',
+					fonts.inter,
+					fonts.lora,
+					fonts.mrDafoe,
+					fonts.vt323,
+				)}>
 				{children}
 			</body>
 		</html>
