@@ -21,7 +21,10 @@ export default function ({ children }: React.PropsWithChildren) {
 		<ReactLenis
 			root
 			ref={lenis}
-			options={{ autoRaf: false }}>
+			options={{
+				autoRaf: false,
+				easing: (time: number) => -(Math.cos(Math.PI * time) - 1) / 2,
+			}}>
 			{children}
 		</ReactLenis>
 	);
