@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import React from 'react';
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
-	const { Navbar, Lenis } = resources;
+	const { Navbar, Lenis, Footer } = resources;
 	const Children = () => children;
 
 	return (
@@ -10,6 +10,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
 			<Lenis>
 				<Navbar />
 				<Children />
+				<Footer />
 			</Lenis>
 		</React.Fragment>
 	);
@@ -18,5 +19,6 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
 const resources = {
 	Navbar: dynamic(() => import('@/components/base/navbar')),
 	Lenis: dynamic(() => import('@/components/lenis/index')),
+	Footer: dynamic(() => import('@/components/base/footer')),
 };
 export default Layout;
