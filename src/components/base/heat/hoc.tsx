@@ -13,7 +13,13 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 		useGSAP(
 			() => {
 				const step = scope.current!.querySelector('[data-step]');
-				const timeline = gsap.timeline({
+
+				gsap.to(step, {
+					ease: 'sine.inOut',
+					rotateX: 0,
+					keyframes: {
+						yPercent: [0, -50],
+					},
 					scrollTrigger: {
 						trigger: scope.current,
 						endTrigger: scope.current?.parentElement,
@@ -22,13 +28,6 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 						scrub: 1.5,
 						pin: scope.current?.parentElement,
 						pinType: 'transform',
-					},
-				});
-				timeline.to(step, {
-					ease: 'sine.inOut',
-					rotateX: 0,
-					keyframes: {
-						yPercent: [0, -50],
 					},
 				});
 			},
