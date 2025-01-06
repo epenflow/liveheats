@@ -9,11 +9,16 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 	return function HOC(props: T) {
 		const scope = React.useRef<HTMLDivElement | null>(null);
 
-		// Scroll
 		useGSAP(
 			() => {
 				const step = scope.current!.querySelector('[data-step]');
 
+				// Reveal
+				gsap.to(scope.current, {
+					opacity: 1,
+				});
+
+				// Scroll
 				gsap.to(step, {
 					ease: 'sine.inOut',
 					rotateX: 0,
@@ -32,16 +37,6 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 				});
 			},
 
-			{ scope },
-		);
-		// Reveal
-		useGSAP(
-			() => {
-				const step = scope.current!.querySelector('[data-step]');
-				gsap.to(scope.current, {
-					opacity: 1,
-				});
-			},
 			{ scope },
 		);
 
