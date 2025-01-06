@@ -39,16 +39,9 @@ export default function <T extends object>(Component: React.ComponentType<T & Pr
 		useGSAP(
 			() => {
 				const step = scope.current!.querySelector('[data-step]');
-				gsap.timeline()
-					.to(scope.current, {
-						opacity: 1,
-					})
-					.from(step, {
-						yPercent: -100,
-						rotateX: 0,
-						autoAlpha: 0,
-						ease: 'sine.inOut',
-					});
+				gsap.to(scope.current, {
+					opacity: 1,
+				});
 			},
 			{ scope },
 		);
