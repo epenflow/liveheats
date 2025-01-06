@@ -8,7 +8,7 @@ export default function Home() {
 				{Object.entries(Views).map(([key, Component]) => (
 					<Component key={key} />
 				))}
-				<section className="h-svh w-full" />
+				<section className="h-svh w-full"></section>
 			</main>
 		</Layout>
 	);
@@ -19,5 +19,6 @@ const resources = {
 	Views: {
 		Hero: dynamic(() => import('@/components/views/hero')),
 		Partnership: dynamic(() => import('@/components/views/partnership')),
+		Feature: dynamic(() => import('@/components/views/feature')),
 	},
 };
